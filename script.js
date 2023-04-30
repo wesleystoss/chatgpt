@@ -6,7 +6,7 @@ inputQuestion.addEventListener("keypress", (e) => {
 
 });
 
-const OPEN_API_KEY = "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";
+const OPEN_API_KEY = "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";
 
 function sendQuestion(){
     var sQuestion = inputQuestion.value;

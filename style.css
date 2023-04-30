@@ -9,6 +9,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: #1d1e23;
+    color: white;
 }
 .content{
     display: flex;
@@ -29,4 +30,7 @@ textarea{
 }
 textarea:focus{
     border: 1px solid #8257e5;
+}
+.title{
+    margin-top: 15px;
 }
