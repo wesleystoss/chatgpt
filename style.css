@@ -150,7 +150,34 @@ footer {
 .inputQuestion {
     flex: 1;
     margin-right: 10px;
-    padding: 5px;
     border-radius: 5px;
     border: none;
+    padding-right: 70px;
+}
+i.bi-send{
+    font-size: 20px;
+    color: #676565;
+    width: 40px;
+    text-align: center;
+    position: fixed;
+    right: 37px;
+}
+i.bi-send:hover{
+    cursor:pointer;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+.acoesChat {
+    position: fixed;
+    right: 30px;
+    display: flex;
+    font-size: 20px;
+}
+.headerHiperlink.hidden{
+    margin-right: 20px;
+}
+i.bi.bi-dash:hover{
+    cursor: pointer;
 }
