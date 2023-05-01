@@ -101,6 +101,9 @@ function verificarBase(inputText){
         case inputText.includes("Até mais") || inputText.includes("Tchau"):
             chatResponse = chatResponseEncerramento();
             break;
+        case inputText.includes("Att") || inputText.includes("att") || inputText.includes("atualização"):
+            chatResponse = chatResponseAtualização();
+            break;
     }
 
     return chatResponse
@@ -113,5 +116,10 @@ function chatResponseSaudacao(){
 
 function chatResponseEncerramento(){
     var chatResponseFixed = "Se precisar de ajuda novamente, é só me chamar"
+    return chatResponseFixed;
+}
+
+function chatResponseAtualização(){
+    var chatResponseFixed = "Última atualização em 01/05/2023 - 16:35"
     return chatResponseFixed;
 }
