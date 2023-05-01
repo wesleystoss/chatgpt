@@ -38,7 +38,7 @@ textarea:focus{
     display: flex;
     align-items: center;
     font-size: 15px;
-    width: 80%;
+    max-width: 600px;
     padding: 10px 10px;
     line-height: 20px;
 }
@@ -55,6 +55,7 @@ textarea:focus{
     box-shadow: 0 2px 7px 0 #9d9d9d;
     color: black;
     background: #eae8e8!important;
+    min-width: 50px;
 }
 .chatResponse.bot{
     /*float: left;*/
@@ -77,15 +78,15 @@ textarea:focus{
 }
 
 span.boxResponse {
-    margin-left: 15px;
+    min-width: 100px;
 }
 .boxResponse.bot{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 .boxResponse.user {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
 header{
     background-color: #380896;
@@ -100,4 +101,7 @@ header{
 body{
     /*background-color: black;
     color: white;*/
+}
+main{
+    padding: 10px;
 }

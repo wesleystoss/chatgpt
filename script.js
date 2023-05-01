@@ -6,7 +6,7 @@ inputQuestion.addEventListener("keypress", (e) => {
 
 });
 
-const OPEN_API_KEY = "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";
+const OPEN_API_KEY = "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";
 
 function sendQuestion(){
     var sQuestion = inputQuestion.value;
@@ -15,10 +15,10 @@ function sendQuestion(){
     const userHtml = `
         <div class="boxResponse user">
             <div class="chatResponse user mb-3">
-                <span class="boxResponse user">${sQuestion}</span>
+                <span class="user">${sQuestion}</span>
             </div>
             <div>
-                <span class="chatBotIcon">:<i class="bi bi-person"></i></span>
+                <span class="chatBotIcon" style="margin-left: 10px; margin-right: 0px">:<i class="bi bi-person"></i></span>
             </div>
         </div>`
     getDiv.innerHTML += userHtml;
