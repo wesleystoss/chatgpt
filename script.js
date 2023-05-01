@@ -10,7 +10,10 @@ const OPEN_API_KEY = "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";
 
 function sendQuestion(){
     var sQuestion = inputQuestion.value;
-    var botHtml = ``
+    if(sQuestion == "" || sQuestion == " "){
+        //alert("Vazio")
+    }else{
+        var botHtml = ``
     var getDiv = document.getElementById("historicoChat");
     const userHtml = `
         <div class="boxResponse user">
@@ -71,6 +74,8 @@ function sendQuestion(){
             getDiv.innerHTML += botHtml;
             }
         })
+    }
+    
 
 
        
