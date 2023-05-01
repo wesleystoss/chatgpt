@@ -5,14 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="content">
-        <textarea name="" id="result" cols="30" rows="10" style="height: 83%;" placeholder="Respota da IA" disabled="true"></textarea>
-        <textarea name="" id="inputQuestion" cols="30" rows="10" style="height: 10%;" placeholder="Pergunte algo"></textarea>
-        <span style="color: white;">Aperte <i>Enter</i> para enviar</span>
-    </div>
+<!-- <div class="content old d-none">
+<div class="text-center mb-3 title">
+<h1><i class="bi bi-robot"></i> Chat GPT</h1>
+</div>
+<textarea name="" id="result" cols="30" rows="10" style="height: 70%;" placeholder="Respota da IA" disabled="true" class="d-none"></textarea>
+<div class="historicoChat">
+<div class="container chatResponse user mb-3">
+<span class="user">Pergunta qualquer</span>
+</div>
+
+<div class="container bg-secondary chatResponse bot mb-3">
+<span class="chatBotIcon"><i class="bi bi-robot"></i>:</span>
+<span class="">Resposta qualquer</span>
+</div>
+
+</div>
+
+<textarea name="" id="inputQuestions" cols="30" rows="10" style="height: 10%;" placeholder="Pergunte algo"></textarea>
+<span style="color: white;">Aperte <i>Enter</i> para enviar</span>
+</div>-->
+
+    <header class="header">
+        <h1><i class="bi bi-robot"></i> Chat GPT</h1>
+    </header>
+
+    <main class="container">
+        <div>
+            <div id="historicoChat"></div>
+        </div>    
+    </main>
+
+    <footer>
+        <div class="inputs fixed-bottom">
+            <input type="text" class="inputQuestion w-100" id="inputQuestion" placeholder="Pergunte algo..." >
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
