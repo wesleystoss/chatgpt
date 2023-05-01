@@ -67,12 +67,7 @@ textarea:focus{
     height: 70px;
     padding: 20px;
 }
-#historicoChat {
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-    overflow-y: overlay;
-}
+
 .errorMessageApi{
  /*   color: red;*/
 }
@@ -94,8 +89,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 15px;
     color: white;
+    box-shadow: 0 0 10px 0 black;
 }
 
 body{
@@ -104,4 +99,58 @@ body{
 }
 main{
     padding: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    overflow-y: scroll;
+    max-height: calc(100vh - 160px);
+    padding: 10px;
+}
+
+footer {
+    background-color: #eee;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+}
+
+.inputQuestion {
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
 }
