@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .chatButton iframe{
+            border-radius: 12px;
+            box-shadow: 0 0 10px 0 rgb(119, 117, 117);
+        }
+        .chatButton.expand{
+            position: fixed;
+            right: 20px;
+            bottom: 120px;
+        }
+        .chatButton.dash:hover{
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+        .chatButton.dash{
+            font-size: 30px;
+            background-color: #380896;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            color: white;
+            box-shadow: 0 0 10px 0 black;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            transition: 0.3s;
+        }
+        .fundo{
+            background-image: url("https://i.ytimg.com/vi/3xW0qckEn6U/maxresdefault.jpg");
+            height: 100vh;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            opacity: 30%;
+            position: fixed;
+        }
+    </style>
+
+    <script>
+        function expandirChat(){
+            window.parent.document.getElementById('chatButton expand').style.display = 'block';
+        
+        }
+    </script>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="fundo"></div>
+    </main>
+    <footer>
+        <div class="chatButton expand" id="chatButton expand" style="display: block;">
+            <iframe src="index.html" height="600px" width="450px" frameborder="0"></iframe>
+        </div>
+        	<!-- WebChat minimizado -->
+
+	<div class="chatButton dash">
+		<i class="bi bi-chat-dots" onclick="expandirChat()"></i>
+	</div>
+
+    </footer>
+</body>
+</html>
