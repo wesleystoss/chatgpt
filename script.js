@@ -6,7 +6,7 @@ inputQuestion.addEventListener("keypress", (e) => {
 
 });
 
-const OPEN_API_KEY = "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";
+const OPEN_API_KEY = "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";
 
 function sendQuestion(){
     var sQuestion = inputQuestion.value;
@@ -14,40 +14,48 @@ function sendQuestion(){
         //alert("Vazio")
     }else{
         var botHtml = ``
-    var getDiv = document.getElementById("historicoChat");
-    const userHtml = `
-        <div class="boxResponse user">
-            <div class="chatResponse user mb-3">
-                <span class="user">${sQuestion}</span>
-            </div>
-            <div>
-                <span class="chatBotIcon" style="margin-left: 10px; margin-right: 0px">:<i class="bi bi-person"></i></span>
-            </div>
-        </div>`
-    getDiv.innerHTML += userHtml;
-    inputQuestion.value = "";
-/*
-    botHtml = `
-        <div class="container bg-secondary chatResponse bot mb-3">
-            <span class="chatBotIcon"><i class="bi bi-robot"></i>:</span>
-            <span class="" id="result">Resposta qualquer</span>
-        </div>`
-    getDiv.innerHTML += botHtml;
-*/
-    fetch("https://api.openai.com/v1/completions", {
-        method: "POST",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + OPEN_API_KEY,
-        },
-        body: JSON.stringify({
-            model: "text-davinci-003",
-            prompt: sQuestion,
-            max_tokens: 2048,
-            temperature: 0.5,
-        }),
-    })
+        var getDiv = document.getElementById("historicoChat");
+        const userHtml = `
+            <div class="boxResponse user">
+                <div class="chatResponse user mb-3">
+                    <span class="user">${sQuestion}</span>
+                </div>
+                <div>
+                    <span class="chatBotIcon" style="margin-left: 10px; margin-right: 0px">:<i class="bi bi-person"></i></span>
+                </div>
+            </div>`
+        getDiv.innerHTML += userHtml;
+        inputQuestion.value = "";
+
+        var resultVerificarBase = verificarBase(sQuestion)
+
+        if(resultVerificarBase != false){
+            botHtml = `
+                <div class="boxResponse bot">
+                    <div>
+                        <span class="chatBotIcon"><i class="bi bi-robot"></i>:</span>
+                    </div>
+                    <div class="chatResponse bot mb-3 float-start">
+                        <span class="" id="result">${resultVerificarBase}</span>
+                    </div>
+                </div>`
+            getDiv.innerHTML += botHtml;
+        }else{
+            /* Faz acionamento da API */
+        fetch("https://api.openai.com/v1/completions", {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + OPEN_API_KEY,
+            },
+            body: JSON.stringify({
+                model: "text-davinci-003",
+                prompt: sQuestion,
+                max_tokens: 2048,
+                temperature: 0.5,
+            }),
+        })
         .then((response) => response.json())
         .then((json) => {
             if(json.error?.message){
@@ -74,61 +82,36 @@ function sendQuestion(){
             getDiv.innerHTML += botHtml;
             }
         })
+        }        
     }
     
-
-
-       
-/*
-
-
-
-    fetch("https://api.openai.com/v1/completions", {
-        method: "POST",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + OPEN_API_KEY,
-        },
-        body: JSON.stringify({
-            model: "text-davinci-003",
-            prompt: sQuestion,
-            max_tokens: 2048,
-            temperature: 0.5,
-        }),
-    })
-        .then((response) => response.json())
-        .then((json) => {
-            if (result.value) result.value += "\n";
-
-            if(json.error?.message) {
-                result.value += `Error: ${json.error.message}`;
-            }else if (json.choices?.[0].text){
-                var text = json.choices[0].text || "Sem resposta";
-
-                result.value += "Chat GPT: " + text;                 
-            }
-
-            result.scrollTop = result.scrollHeight;
-        })
-
-        .catch((error) => console.error("Error: ", error))
-        .finally(() => {
-            inputQuestion.value = "";
-            inputQuestion.disabled = false;
-            inputQuestion.focus();
-        });
-
-    if(result.value) result.value+= "\n\n\n";
-
-    result.value += `Eu: ${sQuestion}`;
-    inputQuestion.value = "Carregando...";
-    inputQuestion.disabled = true;
-
-    result.scrollTop = result.scrollHeight;
-*/
 }
 
 function ocultarChat() {
     window.parent.document.getElementById('chatButton expand').style.display = 'none';
-  }
+}
+
+function verificarBase(inputText){
+    var chatResponse = false;
+
+    switch(true) {
+        case inputText.includes("Olá") || inputText.includes("Tudo bem?"):
+            chatResponse = chatResponseSaudacao();
+            break;
+        case inputText.includes("Até mais") || inputText.includes("Tchau"):
+            chatResponse = chatResponseEncerramento();
+            break;
+    }
+
+    return chatResponse
+}
+
+function chatResponseSaudacao(){
+    var chatResponseFixed = "Olá! Como posso ajudá-lo(a)?"
+    return chatResponseFixed;
+}
+
+function chatResponseEncerramento(){
+    var chatResponseFixed = "Se precisar de ajuda novamente, é só me chamar"
+    return chatResponseFixed;
+}
