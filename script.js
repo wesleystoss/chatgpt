@@ -128,3 +128,7 @@ function sendQuestion(){
     result.scrollTop = result.scrollHeight;
 */
 }
+
+function ocultarChat() {
+    window.parent.document.getElementById('chatButton expand').style.display = 'none';
+  }
