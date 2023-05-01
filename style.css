@@ -99,8 +99,8 @@ header{
 }
 
 body{
-    /*background-color: black;
-    color: white;*/
+    background-color: rgb(241, 241, 241);
+    /*color: white;*/
 }
 main{
     padding: 10px;
