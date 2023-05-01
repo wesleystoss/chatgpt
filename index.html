@@ -11,14 +11,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="content">
-        <div class="text-center mb-3 title">
-            <h1><i class="bi bi-robot"></i> Chat GPT</h1>
+<!-- <div class="content old d-none">
+<div class="text-center mb-3 title">
+<h1><i class="bi bi-robot"></i> Chat GPT</h1>
+</div>
+<textarea name="" id="result" cols="30" rows="10" style="height: 70%;" placeholder="Respota da IA" disabled="true" class="d-none"></textarea>
+<div class="historicoChat">
+<div class="container chatResponse user mb-3">
+<span class="user">Pergunta qualquer</span>
+</div>
+
+<div class="container bg-secondary chatResponse bot mb-3">
+<span class="chatBotIcon"><i class="bi bi-robot"></i>:</span>
+<span class="">Resposta qualquer</span>
+</div>
+
+</div>
+
+<textarea name="" id="inputQuestions" cols="30" rows="10" style="height: 10%;" placeholder="Pergunte algo"></textarea>
+<span style="color: white;">Aperte <i>Enter</i> para enviar</span>
+</div>-->
+
+    <header class="header">
+        <h1><i class="bi bi-robot"></i> Chat GPT</h1>
+    </header>
+
+    <main class="container">
+        <div>
+            <div id="historicoChat"></div>
+        </div>    
+    </main>
+
+    <footer>
+        <div class="inputs fixed-bottom">
+            <input type="text" class="inputQuestion w-100" id="inputQuestion" placeholder="Pergunte algo..." >
         </div>
-        <textarea name="" id="result" cols="30" rows="10" style="height: 70%;" placeholder="Respota da IA" disabled="true"></textarea>
-        <textarea name="" id="inputQuestion" cols="30" rows="10" style="height: 10%;" placeholder="Pergunte algo"></textarea>
-        <span style="color: white;">Aperte <i>Enter</i> para enviar</span>
-    </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

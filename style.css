@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+/*body{
     display: flex;
     justify-content: center;
     width: 100vw;
@@ -31,6 +31,73 @@ textarea{
 textarea:focus{
     border: 1px solid #8257e5;
 }
-.title{
-    margin-top: 15px;
+*/
+.chatResponse{
+    border-radius: 12px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    width: 80%;
+    padding: 10px 10px;
+    line-height: 20px;
+}
+.chatBotIcon{
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+}
+.chatBotIcon i{
+    font-size: 30px;
+    margin-right: 8px;
+}
+.chatResponse.user{
+    box-shadow: 0 2px 7px 0 #9d9d9d;
+    color: black;
+    background: #eae8e8!important;
+}
+.chatResponse.bot{
+    /*float: left;*/
+    background-color: #8257e5;
+    box-shadow: 0 2px 7px 0 #513591b5;
+    color: white;
+}
+.inputQuestion{
+    height: 70px;
+    padding: 20px;
+}
+#historicoChat {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    overflow-y: overlay;
+}
+.errorMessageApi{
+ /*   color: red;*/
+}
+
+span.boxResponse {
+    margin-left: 15px;
+}
+.boxResponse.bot{
+    display: flex;
+    justify-content: space-around;
+}
+.boxResponse.user {
+    display: flex;
+    justify-content: space-around;
+}
+header{
+    background-color: #380896;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+    color: white;
+}
+
+body{
+    /*background-color: black;
+    color: white;*/
 }
