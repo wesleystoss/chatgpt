@@ -120,6 +120,6 @@ function chatResponseEncerramento(){
 }
 
 function chatResponseAtualização(){
-    var chatResponseFixed = "Última atualização em 01/05/2023 - 16:35"
+    var chatResponseFixed = "Última atualização em 11/05/2023 - 22:59"
     return chatResponseFixed;
 }
