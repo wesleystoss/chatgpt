@@ -129,8 +129,9 @@ h1 {
 main {
     flex: 1;
     overflow-y: scroll;
-    max-height: calc(100vh - 160px);
+    /* max-height: calc(100vh - 180px); */
     padding: 10px;
+    margin-bottom: 90px;
 }
 
 footer {
