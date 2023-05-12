@@ -6,7 +6,7 @@ inputQuestion.addEventListener("keypress", (e) => {
 
 });
 
-const OPEN_API_KEY = "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";
+const OPEN_API_KEY = "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";
 
 function sendQuestion(){
     var sQuestion = inputQuestion.value;
@@ -52,7 +52,7 @@ function sendQuestion(){
             body: JSON.stringify({
                 model: "text-davinci-003",
                 prompt: sQuestion,
-                max_tokens: 2048,
+                max_tokens: 300,
                 temperature: 0.5,
             }),
         })
